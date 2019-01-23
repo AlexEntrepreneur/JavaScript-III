@@ -1,10 +1,10 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. Default Binding
-* 2. Implicit Binding
-* 3. NEW Object Binding
-* 4. Explicit Binding
+* 1. Default Binding - When a function containing "this" is invoked globally, "this" will refer to the global "window" object or will be undefined in "use strict" mode.
+* 2. Implicit Binding - When a function is a method of some object, "this" will refer to that object when the function is invoked as a method.
+* 3. NEW Object Binding - When a constructor function is created and "this" is used in the body of the constructor function, "this" will refer to any object that is newly created from the constructor class.
+* 4. Explicit Binding - When an object is bound to a function using exampleFunction.bind(Object) and that function is called e.g. boundFunction(), "this" will refer to the specified "Object" passed to the bind method.
 *
 * write out a code example of each explanation above
 */
