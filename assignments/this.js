@@ -43,5 +43,15 @@ const imANewObject = new NewBindingConstructor("imANewObject");
 // code example for New Binding
 
 // Principle 4
+function explicitBinding() {
+  console.log(`Explicit Binding: \"this\" refers to => \"${this.name}\" Object`);
+}
+
+const specifiedObject = {
+  "name": "specifiedObject"
+}
+
+const boundFunction = explicitBinding.bind(specifiedObject); // Can use call or apply also
+boundFunction();
 
 // code example for Explicit Binding
