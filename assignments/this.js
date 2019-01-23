@@ -10,6 +10,11 @@
 */
 
 // Principle 1
+function defaultBinding() {
+  console.log(`\"this\" refers to => \"${this.__proto__.constructor.name}\" Object`);
+}
+
+defaultBinding();
 
 // code example for Window Binding
 
