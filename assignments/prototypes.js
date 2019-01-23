@@ -24,8 +24,6 @@ GameObject.prototype.destroy = function() {
   return 'Object was removed from the game.';
 }
 
-const gO = new GameObject('sejdh', 3, 45);
-
 /*
   === CharacterStats ===
   * healthPoints
@@ -33,6 +31,18 @@ const gO = new GameObject('sejdh', 3, 45);
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+
+function CharacterStats(health, name) {
+  this.healthPoints = health;
+  this.name = name;
+}
+
+CharacterStats.prototype.takeDamage = function() {
+  GameObject(this);
+  return `${this.name} took damage.`
+}
+
+CharacterStats.prototype = Object.create(GameObject.prototype);
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
