@@ -10,29 +10,28 @@
 */
 
 // Principle 1
-function defaultBinding() {
-  console.log(`\"this\" refers to => \"${this.__proto__.constructor.name}\" Object`);
+// code example for Window Binding
+function defaultBindingFunction() {
+  console.log(`Default Binding: \"this\" refers to => \"${this.__proto__.constructor.name}\" Object`);
 }
 
-defaultBinding();
-
-// code example for Window Binding
+defaultBindingFunction();
 
 // Principle 2
-function implicitBinding() {
+// code example for Implicit Binding
+function implicitBindingFunction() {
   console.log(`Implicit Binding: \"this\" refers to => \"${this.name}\" Object`);
 }
 
 const implicitObject = {
   "name": "implicitObject",
-  "where_is_this": implicitBinding
+  "implicit_object_method": implicitBindingFunction
 }
 
-implicitObject.where_is_this();
-
-// code example for Implicit Binding
+implicitObject.implicit_object_method();
 
 // Principle 3
+// code example for New Binding
 function NewBindingConstructor(name) {
   this.name = name;
   console.log(`NEW Binding: \"this\" refers to => \"${this.name}\" Object`);
@@ -40,10 +39,9 @@ function NewBindingConstructor(name) {
 
 const imANewObject = new NewBindingConstructor("imANewObject");
 
-// code example for New Binding
-
 // Principle 4
-function explicitBinding() {
+// code example for Explicit Binding
+function explicitBindingFunction() {
   console.log(`Explicit Binding: \"this\" refers to => \"${this.name}\" Object`);
 }
 
@@ -51,7 +49,5 @@ const specifiedObject = {
   "name": "specifiedObject"
 }
 
-const boundFunction = explicitBinding.bind(specifiedObject); // Can use call or apply also
+const boundFunction = explicitBindingFunction.bind(specifiedObject); // Can use call or apply also
 boundFunction();
-
-// code example for Explicit Binding
