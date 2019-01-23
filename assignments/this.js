@@ -3,8 +3,8 @@
 *
 * 1. Default Binding
 * 2. Implicit Binding
-* 3. Explicit Binding
-* 4. NEW Object Binding
+* 3. NEW Object Binding
+* 4. Explicit Binding
 *
 * write out a code example of each explanation above
 */
@@ -33,6 +33,12 @@ implicitObject.where_is_this();
 // code example for Implicit Binding
 
 // Principle 3
+function NewBindingConstructor(name) {
+  this.name = name;
+  console.log(`NEW Binding: \"this\" refers to => \"${this.name}\" Object`);
+}
+
+const imANewObject = new NewBindingConstructor("imANewObject");
 
 // code example for New Binding
 
